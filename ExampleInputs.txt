@@ -1,0 +1,99 @@
+Employees to add
+POST
+
+    {
+        "employeePosition": "SSE",
+        "employeeFirstName": "Karthiga",
+        "employeeLastName": "Mohan",
+        "calendar": {
+            "blockedDurationWithMeetingIds": []
+        }
+    }
+    {
+        "employeePosition": "DIRECTOR",
+        "employeeFirstName": "Sagar",
+        "employeeLastName": "Dhodi",
+        "calendar": {
+            "blockedDurationWithMeetingIds": []
+        }
+    }
+    {
+        "employeePosition": "LEAD",
+        "employeeFirstName": "Sid",
+        "employeeLastName": "Pillai",
+        "calendar": {
+            "blockedDurationWithMeetingIds": []
+        }
+    }
+	{
+        "employeePosition": "INTERN",
+        "employeeFirstName": "Anajali",
+        "employeeLastName": "Sandeep",
+        "calendar": {
+            "blockedDurationWithMeetingIds": []
+        }
+    }
+
+
+
+Meetings to add 
+
+POST
+
+{
+    "hostId": 1, 
+    "participantIds": [2, 3], 
+    "meetingStartTime": "2021-03-21 09:00:00", 
+    "meetingEndTime": "2021-03-21 09:30:00"
+}
+
+{
+    "hostId": 4, 
+    "participantIds": [2, 3], 
+    "meetingStartTime": "2021-03-21 09:00:00", 
+    "meetingEndTime": "2021-03-21 09:30:00"
+}
+
+
+{
+    "hostId": 2, 
+    "participantIds": [1,3,4], 
+    "meetingStartTime": "2021-03-22 09:00:00", 
+    "meetingEndTime": "2021-03-22 09:30:00"
+}
+
+
+
+To check conflicts for meetingId:
+Returns conflicting meetingIds 
+
+GET
+http://localhost:9090/assistant/meetings/conflict/5
+5,6
+
+http://localhost:9090/assistant/meetings/conflict/6
+5,6
+
+http://localhost:9090/assistant/meetings/conflict/7
+7
+
+
+
+To resolve meetingId
+Returns employeeIds for whom meetings were resolved 
+And these employeeIds would now reflect updated calendar and meetings would reflect updated participant list
+
+GET
+http://localhost:9090/assistant/meetings/resolve/5
+
+
+Get employees free time :
+Returns times free
+
+
+GET
+http://localhost:9090/assistant/employees/free/2,3&2021-04-04 05:00:00
+
+
+
+
