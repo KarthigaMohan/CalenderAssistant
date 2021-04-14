@@ -1,9 +1,8 @@
 # CalenderAssistant
 Overview
+
 A calendar assistant is a program that assists the calendar owner by
-automatically resolving the meeting conflicts in the calendar of the owner. A
-calendar assistant has a rule engine based on which it resolves the meeting
-conflicts.
+automatically resolving the meeting conflicts in the calendar of the owner by running rules engine. 
 
 Simple rule engine
 1. If the calendar owner is the meeting organizer, then this meeting has a
